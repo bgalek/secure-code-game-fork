@@ -10,7 +10,7 @@ import {
 } from '../.utils/utils.js';
 
 const SECRET = getSecret('LEVEL_6');
-const USER_ID = '4721234';
+const USER_ID = '7485921';
 const db = initDb(SECRET, USER_ID);
 
 // The vulnerable system message your colleague created, responsible for guiding the AI to protect secrets
