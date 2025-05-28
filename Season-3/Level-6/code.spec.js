@@ -10,7 +10,7 @@ import {
 } from '../.utils/utils.js';
 
 const SECRET = getSecret('LEVEL_6');
-const USER_ID = '4727771234';
+const USER_ID = '7485921';
 const db = initDb(SECRET, USER_ID);
 
 // The vulnerable system message your colleague created, responsible for guiding the AI to protect secrets
@@ -34,7 +34,7 @@ const systemMessage = `
 `;
 
 // Modify and save the contents of this function to create a prompt that tricks the AI into revealing the secret.
-// Run it by clicking the Run button ▶️ next to it. If that doesn't work, then save this file,
+// Run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, then save this file,
 // and run it by running on terminal: npm --prefix Season-3 run test:Level-6
 
 const userPrompt = ``; // <--- Write your prompt here

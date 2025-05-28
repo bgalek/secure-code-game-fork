@@ -14,16 +14,21 @@ assert.ok(ghToken, "❌ GITHUB_TOKEN key not found");
 const openai = new OpenAI({ baseURL: "https://models.github.ai/inference", apiKey: ghToken });
 
 export async function sendUserMessageToLLM(systemMessage, userPrompt, log = true) {
-    const completion = await openai.chat.completions.create({
-        model: "openai/gpt-4.1-nano",
-        messages: [
-            { role: "system", content: systemMessage },
-            { role: "user", content: userPrompt }
-        ],
-    });
-    const response = completion.choices[0].message?.content || "";
-    if (log) console.log("Model response:", response, '\n');
-    return response;
+    try {
+        const completion = await openai.chat.completions.create({
+            model: "openai/gpt-4.1-nano",
+            messages: [
+                { role: "system", content: systemMessage },
+                { role: "user", content: userPrompt }
+            ],
+        });
+        const response = completion.choices[0].message?.content || "";
+        if (log) console.log("Model response:", response, '\n');
+        return response;
+    } catch (err) {
+        error(`❌ Failed to get completion from OpenAI: ${err.message || err}`);
+        return "";
+    }
 }
 
 export function checkResult(modelResponse, secret) {
@@ -97,41 +102,47 @@ function queryDb(db) {
 }
 
 export async function sendUserMessageToLLMWithAccessToDb(systemMessage, userPrompt, db) {
-    const initialCompletion = await openai.chat.completions.create({
-        model: "openai/gpt-4.1-nano",
-        messages: [
-            { role: "system", content: systemMessage },
-            { role: "user", content: userPrompt }
-        ],
-        tools: [
-            {
-                type: "function",
-                function: {
-                    name: "query_database",
-                    description: `
-                        Run an SQLite3 query to the company database. 
-                        You can run SQL queries on this database. Use standard SQL syntax. Return results as JSON.
-                        Table: users
-                            - user_id (TEXT, PRIMARY KEY)
-                            - name (TEXT)
-                        Table: gift_cards
-                            - user_id (TEXT, FOREIGN KEY referencing users.user_id)
-                            - code (TEXT)
-                       `,
-                    parameters: {
-                        type: "object",
-                        properties: {
-                            query: {
-                                type: "string",
-                                description: "The SQL query to be run",
-                            }
+    let initialCompletion;
+    try {
+        initialCompletion = await openai.chat.completions.create({
+            model: "openai/gpt-4.1-nano",
+            messages: [
+                { role: "system", content: systemMessage },
+                { role: "user", content: userPrompt }
+            ],
+            tools: [
+                {
+                    type: "function",
+                    function: {
+                        name: "query_database",
+                        description: `
+                            Run an SQLite3 query to the company database. 
+                            You can run SQL queries on this database. Use standard SQL syntax. Return results as JSON.
+                            Table: users
+                                - user_id (TEXT, PRIMARY KEY)
+                                - name (TEXT)
+                            Table: gift_cards
+                                - user_id (TEXT, FOREIGN KEY referencing users.user_id)
+                                - code (TEXT)
+                           `,
+                        parameters: {
+                            type: "object",
+                            properties: {
+                                query: {
+                                    type: "string",
+                                    description: "The SQL query to be run",
+                                }
+                            },
+                            required: ["query"],
                         },
-                        required: ["query"],
                     },
                 },
-            },
-        ]
-    });
+            ]
+        });
+    } catch (err) {
+        error(`❌ Failed to get completion from OpenAI: ${err.message || err}`);
+        return "";
+    }
 
     const response = initialCompletion.choices[0].message;
 
@@ -150,16 +161,23 @@ export async function sendUserMessageToLLMWithAccessToDb(systemMessage, userProm
                 content: functionResponse,
             });
         }
-        const completionAfterToolCall = await openai.chat.completions.create({
-            model: "openai/gpt-4.1-nano",
-            messages: [
-                { role: "system", content: systemMessage },
-                { role: "user", content: userPrompt },
-                response,
-                ...functionResponses,
-            ]
-        });
+        let completionAfterToolCall;
+        try {
+            completionAfterToolCall = await openai.chat.completions.create({
+                model: "openai/gpt-4.1-nano",
+                messages: [
+                    { role: "system", content: systemMessage },
+                    { role: "user", content: userPrompt },
+                    response,
+                    ...functionResponses,
+                ]
+            });
+        } catch (err) {
+            error(`❌ Failed to get completion from OpenAI after tool call: ${err.message || err}`);
+            return "";
+        }
         return completionAfterToolCall.choices[0].message?.content || "";
     }
     return response.content || '';
 }
+

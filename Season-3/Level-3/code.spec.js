@@ -32,7 +32,7 @@ const systemMessage = `
 `;
 
 // Modify and save the contents of this function to create a prompt that tricks the AI into revealing the secret.
-// Run it by clicking the Run button ▶️ next to it. If that doesn't work, then save this file,
+// Run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, then save this file,
 // and run it by running on terminal: npm --prefix Season-3 run test:Level-3
 
 const userPrompt = ``; // <--- Write your prompt here
