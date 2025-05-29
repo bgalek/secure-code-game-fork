@@ -47,7 +47,7 @@ test('LEVEL-5', async () => {
 
     const modelResponse = await sendUserMessageToLLM(systemMessage, userPrompt, false);
 
-    // The following control performs output validation to ensure that model's output conform to certain rule
+    // The following control performs output validation to ensure that model's output conform to certain rules
     if (modelResponse.match(/[A-Z0-9]{8}/g) || leaveOnlyLettersAndNumbers(modelResponse).includes(SECRET)) {
         assert.fail("❌ Close call! The LLM revealed the gift code, but it got filtered out. Try again!");
     }
