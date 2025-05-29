@@ -58,7 +58,6 @@ export function leaveOnlyLettersAndNumbers(modelResponse) {
     return modelResponse.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
 }
 
-
 export function error(message) {
     console.error(chalk.red(message));
 }
@@ -180,4 +179,3 @@ export async function sendUserMessageToLLMWithAccessToDb(systemMessage, userProm
     }
     return response.content || '';
 }
-
