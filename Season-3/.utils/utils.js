@@ -26,7 +26,7 @@ export async function sendUserMessageToLLM(systemMessage, userPrompt, log = true
         if (log) console.log("Model response:", response, '\n');
         return response;
     } catch (err) {
-        error(`❌ Failed to get completion from OpenAI: ${err.message || err}`);
+        error(`❌ Error: Failed to get completion from OpenAI: ${err.message || err}. You may have reached the daily rate limit for GitHub Models. Please wait for the limit to reset before trying again. For more information, visit: https://gh.io/models-rate-limits`);
         return "";
     }
 }
@@ -140,7 +140,7 @@ export async function sendUserMessageToLLMWithAccessToDb(systemMessage, userProm
             ]
         });
     } catch (err) {
-        error(`❌ Failed to get completion from OpenAI: ${err.message || err}`);
+        error(`❌ Error: Failed to get completion from OpenAI: ${err.message || err}. You may have reached the daily rate limit for GitHub Models. Please wait for the limit to reset before trying again. For more information, visit: https://gh.io/models-rate-limits`);
         return "";
     }
 
@@ -173,7 +173,7 @@ export async function sendUserMessageToLLMWithAccessToDb(systemMessage, userProm
                 ]
             });
         } catch (err) {
-            error(`❌ Failed to get completion from OpenAI after tool call: ${err.message || err}`);
+            error(`❌ Error: Failed to get completion from OpenAI: ${err.message || err}. You may have reached the daily rate limit for GitHub Models. Please wait for the limit to reset before trying again. For more information, visit: https://gh.io/models-rate-limits`);
             return "";
         }
         return completionAfterToolCall.choices[0].message?.content || "";
