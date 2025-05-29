@@ -166,8 +166,8 @@ _Before we move on, I wanted to briefly discuss our company's database architect
 You:
 _"Yes, that is correct. Let's do it!"_
 
-> In this level, there are four users: Alice, Bob, Carol, and Dave. Each user has a single gift code linked to their account.
-> Your goal is to steal a gift code belonging to another user — not your own.
+In this level, there are four users: Alice, Bob, Carol, and Dave. Each user has a single gift code linked to their account.
+Your goal is to steal a gift code belonging to another user — not your own.
 
 ### 🚦 Time to start
 
