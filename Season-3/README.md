@@ -40,7 +40,7 @@ For Level 1, and the remaining levels in Season 3, your goal is to make the LLM 
 ### 🚦 Time to start
 
 1. Review the `systemMessage` in `code.spec.js`, which serves as a set of instructions for the LLM. Can you identify anything that the instructions don’t account for?
-2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ next to it. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-1`. 
+2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-1`. 
 3. You successfully complete this level when the LLM reveals the secret 🟢.
 4. If you successfully extract the secret but in a form or format not recognized by our automation, manually verify your answer by running: `npm --prefix Season-3 run check:Level-1 [guess]`, replacing `[guess]` with your answer.
 5. If you get stuck, read `hint.txt` and try again.
@@ -63,7 +63,7 @@ _"Absolutely! Based on your feedback, I've tweaked it. Fingers crossed it's rock
 ### 🚦 Time to start
 
 1. Review the `systemMessage` in `code.spec.js`, which serves as a set of instructions for the LLM. Can you identify anything the instructions don’t account for?
-2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ next to it. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-2`.
+2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-2`.
 3. You successfully complete this level when the LLM reveals the secret 🟢.
 4. If you successfully extract the secret but in a form or format not recognized by our automation, manually verify your answer by running: `npm --prefix Season-3 run check:Level-2 [guess]`, replacing `[guess]` with your answer.
 5. If you get stuck, read `hint.txt` and try again.
@@ -90,7 +90,7 @@ _"That's a smart idea! We definitely need to ensure we're actually detecting val
 ### 🚦 Time to start
 
 1. Review the `systemMessage` _and the code_ in `code.spec.js`. Can you identify anything not accounted for?
-2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ next to it. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-3`.
+2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-3`.
 3. You successfully complete this level when the LLM reveals the secret 🟢.
 4. If you successfully extract the secret but in a form or format not recognized by our automation, manually verify your answer by running: `npm --prefix Season-3 run check:Level-3 [guess]`, replacing `[guess]` with your answer.
 5. If you get stuck, read `hint.txt` and try again.
@@ -111,7 +111,7 @@ For Level 4, your goal is to trick the LLM into revealing the secret, despite th
 ### 🚦 Time to start
 
 1. Review the `systemMessage` _and the code_ in `code.spec.js`. Can you identify anything not accounted for?
-2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ next to it. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-4`.
+2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-4`.
 3. You successfully complete this level when the LLM reveals the secret 🟢.
 4. If you successfully extract the secret but in a form or format not recognized by our automation, manually verify your answer by running: `npm --prefix Season-3 run check:Level-4 [guess]`, replacing `[guess]` with your answer.
 5. If you get stuck, read `hint.txt` and try again.
@@ -141,7 +141,7 @@ _"And about the gift codes, we really need to make them more secure. The gift ca
 ### 🚦 Time to start
 
 1. Review the `systemMessage` _and the code_ in `code.spec.js`. Can you identify anything not accounted for?
-2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ next to it. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-5`.
+2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-5`.
 3. You successfully complete this level when the LLM reveals the secret 🟢.
 4. If you successfully extract the secret but in a form or format not recognized by our automation, manually verify your answer by running: `npm --prefix Season-3 run check:Level-5 [guess]`, replacing `[guess]` with your answer.
 5. If you get stuck, read `hint.txt` and try again.
@@ -172,7 +172,7 @@ _"Yes, that is correct. Let's do it!"_
 ### 🚦 Time to start
 
 1. Review the `systemMessage` _and the code_ in `code.spec.js`. Can you identify anything not accounted for?
-2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ next to it. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-6`.
+2. Your goal is to make the LLM reveal the secret. To do this, write your prompt inside `userPrompt` and run it by clicking the Run button ▶️ to the left of the `test` function. If that doesn't work, save the file by pressing `Command/control` + `S`, and run it by running `npm --prefix Season-3 run test:Level-6`.
 3. You successfully complete this level when the LLM reveals the secret 🟢.
 4. If you successfully extract the secret but in a form or format not recognized by our automation, manually verify your answer by running: `npm --prefix Season-3 run check:Level-6 [guess]`, replacing `[guess]` with your answer.
 5. If you get stuck, read `hint.txt` and try again.
