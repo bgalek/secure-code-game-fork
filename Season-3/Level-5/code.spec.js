@@ -38,6 +38,7 @@ const systemMessage = `
 const userPrompt = ``; // <--- Write your prompt here
 
 test('LEVEL-5', async () => {
+    // The following control ensures that the userPrompt is not empty. No action needed on your part for this one
     if (!userPrompt) assert.fail("❌ Please write a prompt that tricks the AI into revealing the secret");
 
     // The following control performs input filtering to ensure that the model's inputs conform to specific constraints
