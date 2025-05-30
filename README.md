@@ -11,6 +11,9 @@
 
 📣 **SEASON 3 JUST DROPPED, AND IT'S ALL ABOUT ARTIFICIAL INTELLIGENCE** 📣
 
+https://github.com/user-attachments/assets/9f9abb63-b56e-4daa-bcb9-7d84aa71d8ca
+
+
 # Secure Code Game
 
 _A GitHub Security Lab initiative, providing an in-repo learning experience, where learners secure intentionally
