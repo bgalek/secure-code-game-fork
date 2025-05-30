@@ -4,6 +4,9 @@ _Welcome to Secure Code Game - Season 3!_ 🤖
 
 This season, you'll dive into the fascinating world of Artificial Intelligence (AI), honing your skills in AI model robustness against adversarial inputs by becoming skilled in secure system prompts, LLM self-verification, effective input filtering, and output validation.
 
+https://github.com/user-attachments/assets/4ae03691-afcd-4630-a82d-839358f4b1a1
+
+
 ### 🧑‍💻 Task
 
 Building on the achievements and knowledge of the previous two seasons of the Secure Code Game, you will take on the role of a Senior Developer. You are responsible for shipping applications powered by Large Language Models (LLMs). As these types of application grow in popularity, ensuring their security becomes more critical than ever.
